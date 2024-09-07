@@ -3,3 +3,4 @@ build
 .pytest_cache
 dist
 Configify_Wizard.egg-info
+setup.py

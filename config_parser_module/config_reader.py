@@ -42,10 +42,12 @@ class ConfigParserModule:
 
     def write_env(self, file_path):
         """Writes configurations to a .env file."""
+        print("Loading the configurations in .env file...")
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
         load_dotenv(file_path)  # Load existing .env if it exists
         for key, value in self.config_dict.items():
             set_key(file_path, key, str(value))
+        print("Done Successfully!")
 
         # with open(file_path, 'w') as f:
         #     for key, value in self.config_dict.items():
@@ -53,9 +55,11 @@ class ConfigParserModule:
 
     def write_json(self, file_path):
         """Writes configurations to a .json file."""
+        print("Loading the configurations in .json file...")
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
         with open(file_path, 'w') as f:
             json.dump(self.config_dict, f, indent=4)
+        print("Done Sucessfully!")
 
     def set_os_env(self):
         """Sets configurations in the OS environment."""
@@ -63,16 +67,14 @@ class ConfigParserModule:
             os.environ[key] = str(value)
 
             # os.system(f'setx {key} "{value}"') -- for windows
-
+            print("Setting the Configurations as Environment Variables in OS...")
             """For ubuntu - Setting environment variable in the current shell using export command"""
             command = f'export {key}="{value}"'
             subprocess.run(command, shell=True, executable='/bin/bash')
+            print("Done Successfully!")
 
 # Sample usage
 if __name__ == "__main__":
-    print("======================================================")
-    print("================ Config Parser Module ================")
-    print("======================================================")
     print()
     fileformat_option = int(input("Please Choose the file format you want to Parse. \n1. YAML\n2. CFG\n3. CONF\n"))
     filepath = input("Please Enter the full path of the file: ")
@@ -114,7 +116,7 @@ if __name__ == "__main__":
         config_parser.write_env(r"./loadedfiles/.env")
         print("Configurations loaded to .env file successfully!")
     elif load_type== "json":
-        print("Loading the configurations in .env file...")
+        print("Loading the configurations in .json file...")
         config_parser.write_json(r"./loadedfiles/config-parsed.json")
         print("Configurations loaded to 'config-parsed.json' file successfully!")
     elif load_type == "env_variable":

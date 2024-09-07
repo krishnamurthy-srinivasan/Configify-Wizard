@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='Configify_Wizard',
-    version='0.1.1',
+    version='0.1.2',
     author='Krishna Murthy Srinivasan',
     author_email='harikrishnachn@gmail.com',
     description='A configuration parser for YAML, CFG, and ENV files',
