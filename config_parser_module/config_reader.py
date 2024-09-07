@@ -8,7 +8,13 @@ from dotenv import set_key, load_dotenv
 class ConfigParserModule:
     
     def __init__(self):
+        print("======================================================")
+        print("================ Config Parser Module ================")
+        print("======================================================")
+        print()
         self.config_dict = {}
+
+    
 
     def flatten_dict(self, d, parent_key='', sep='.'):
         items = []
