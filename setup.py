@@ -8,8 +8,8 @@ setup(
     description='A configuration parser for YAML, CFG, and ENV files',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/yourusername/config_parser_module',  # Optional, URL of your project
-    packages=find_packages(),  # Automatically find all packages
+    url='https://github.com/krishnamurthy-srinivasan/Configify-Wizard',  
+    packages=find_packages(),
     install_requires=[
         'python-dotenv',
     ],
