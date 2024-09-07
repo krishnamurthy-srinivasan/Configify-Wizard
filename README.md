@@ -12,7 +12,7 @@
 
 You can install `Configify Wizard` via pip:
 
-`bash
+`bash`
 pip install Configify-Wizard
 
 ## Usage
@@ -22,7 +22,6 @@ Here’s a quick guide to using Configify Wizard:
 ### 1. Parse Configuration Files
 You can read configuration files in YAML, CFG, or CONF formats:
 
-`inline code`
 
 ```python
 from config_parser_module import ConfigParserModule
@@ -40,8 +39,6 @@ config_dict = config_parser.read_cfg('config.cfg')
 
 You can write configurations to a .env file or a JSON file:
 
-`inline code`
-
 ```python
 # Write to .env file
 config_parser.write_env('./config.env')
@@ -53,7 +50,8 @@ config_parser.write_json('./config.json')
 
 ## 3. Set Environment Variables
 
-`inline code`
 ```python
+
 config_parser.set_os_env()
+
 ```
