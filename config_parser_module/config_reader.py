@@ -59,8 +59,8 @@ class ConfigParserModule:
             # os.system(f'setx {key} "{value}"') -- for windows
 
             """For ubuntu - Setting environment variable in the current shell using export command"""
-            # command = f'export {key}="{value}"'
-            # subprocess.run(command, shell=True, executable='/bin/bash')
+            command = f'export {key}="{value}"'
+            subprocess.run(command, shell=True, executable='/bin/bash')
 
 # Sample usage
 if __name__ == "__main__":

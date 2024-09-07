@@ -24,17 +24,19 @@ You can read configuration files in YAML, CFG, or CONF formats:
 
 
 ```python
-from config_parser_module import ConfigParserModule
+from config_parser_module.config_reader import ConfigParserModule
 
 config_parser = ConfigParserModule()
 
-# Read YAML file
+# Read YAML file 
 config_dict = config_parser.read_yaml('config.yaml')
 
 # Read CFG or CONF file
 config_dict = config_parser.read_cfg('config.cfg')
 
 ```
+**Note: Please enter full path of the files which you want to parse**
+
 ### 2. Write Configurations
 
 You can write configurations to a .env file or a JSON file:
@@ -47,6 +49,7 @@ config_parser.write_env('./config.env')
 config_parser.write_json('./config.json')
 
 ```
+**Note: config_parser takes care of creating the directory if not present, enter desired filename and patho of your choice.**
 
 ## 3. Set Environment Variables
 
@@ -55,3 +58,5 @@ config_parser.write_json('./config.json')
 config_parser.set_os_env()
 
 ```
+
+**Note: Setting up Environment Variable in OS currently supports for Linux Environment, Windows is currently under development, Contributions Welcome 😉**
